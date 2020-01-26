@@ -102,9 +102,7 @@
                     document.getElementById('indexLink').click();
                 }
             };
-        }
-
-        var payload = {
+            var payload = {
             "name": name,
             "mobile": mobileNumber,
             "emailaddress": email,
@@ -115,6 +113,9 @@
         xhttp.open("POST", "http://localhost:3000/xyz/byebye", true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(toPost);
+        }
+
+       
     }
 </script>
 

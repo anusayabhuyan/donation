@@ -83,9 +83,11 @@
         var mobileNumber = document.getElementById('mobileNumber').value;
         var password = document.getElementById('userPassword').value;
 
-        if (mobileNumber != '' & password != '') {
+        if (mobileNumber != '' && password != '') {
+
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
+
                 if (this.readyState == 4 && this.status == 200) {
                     let resp = JSON.parse(this.response);
                     console.log(resp);
@@ -100,10 +102,11 @@
                     }
                 }
             };
+            xhttp.open("GET", "http://localhost:3000/xyz/hello/" + mobileNumber, true);
+        xhttp.send();
         }
 
-        xhttp.open("GET", "http://localhost:3000/xyz/hello/" + mobileNumber, true);
-        xhttp.send();
+        
     }
 </script>
 
